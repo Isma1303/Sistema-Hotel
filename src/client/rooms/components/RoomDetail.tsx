@@ -75,33 +75,35 @@ function RoomDetail() {
   const disponibilidad = room.isAvailable || "Sin Datos";
 
   return (
-    <Card sx={{ maxWidth: 800, margin: "auto" }}>
-      <CardMedia
-        component="img"
-        height="300"
-        src={currentImageUrl}
-        alt="Room image"
-        onError={handleImageError}
-      />
-      <CardContent>
-        <Typography variant="h3">{nombre}</Typography>
-        <Typography variant="h5" mt={2}>
-          Q{precio}
-        </Typography>
-        <Typography variant="body1" mt={2}>
-          {descripcion}
-        </Typography>
-        <Typography variant="body1" mt={2}>
-          {amenidades}
-        </Typography>
-        <Typography variant="body1" mt={2}>
-          {tipo}
-        </Typography>
-        <Typography variant="body1" mt={2}>
-          {disponibilidad}
-        </Typography>
-      </CardContent>
-    </Card>
+    <>
+      <Card sx={{ maxWidth: 800, margin: "auto" }}>
+        <CardMedia
+          component="img"
+          height="300"
+          src={currentImageUrl}
+          alt="Room image"
+          onError={handleImageError}
+        />
+        <CardContent>
+          <Typography variant="h3">{nombre}</Typography>
+          <Typography variant="h5" mt={2}>
+            Q{precio}
+          </Typography>
+          <Typography variant="body1" mt={2}>
+            {descripcion}
+          </Typography>
+          <Typography variant="body1" mt={2}>
+            {amenidades}
+          </Typography>
+          <Typography variant="body1" mt={2}>
+            {tipo}
+          </Typography>
+          <Typography variant="body1" mt={2}>
+            {disponibilidad}
+          </Typography>
+        </CardContent>
+      </Card>
+    </>
   );
 }
 export default RoomDetail;

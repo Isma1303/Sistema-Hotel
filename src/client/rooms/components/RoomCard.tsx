@@ -27,7 +27,7 @@ function RoomAll({ _id, name, price, description, images }: Room) {
             {description || "Descripción no disponible"}
           </Typography>
           <Typography variant="body2" sx={{ color: "text.secondary" }}>
-            {price || "Precio no disponible"}
+            Q{price || "Precio no disponible"}
           </Typography>
         </CardContent>
       </CardActionArea>

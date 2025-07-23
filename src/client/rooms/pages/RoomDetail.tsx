@@ -4,6 +4,8 @@ import { getRoomDetail } from "../services/rooms.service";
 import RoomDetail from "../components/RoomDetail";
 import { Box, CircularProgress, Typography } from "@mui/material";
 import type { Room } from "../interface/room.interface";
+import Header from "../../../components/Headet";
+import Footer from "../../../components/Footer";
 
 function RoomDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -57,9 +59,13 @@ function RoomDetailPage() {
   }
 
   return (
-    <Box mt={4}>
-      <RoomDetail {...room} />
-    </Box>
+    <>
+      <Header />
+      <Box mt={4}>
+        <RoomDetail {...room} />
+      </Box>
+      <Footer />
+    </>
   );
 }
 
