@@ -76,7 +76,9 @@ const ReservationDataField: React.FC<Props> = ({
             <Typography variant="h6">Q450.00</Typography>
           </Box>
         </Stack>
-        <Button href="/reservation/sumary"> Continuar</Button>
+        <Button className="bg-amber-950" href="/reservation/sumary">
+          Continuar
+        </Button>
       </Paper>
     </Box>
   );

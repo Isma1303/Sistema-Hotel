@@ -15,7 +15,6 @@ function LoginForm() {
 
     try {
       await login(email, password);
-      console.log("login exitoso");
       navegate("/");
     } catch (err) {
       console.error("Error en login:", err);

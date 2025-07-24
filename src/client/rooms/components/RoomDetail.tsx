@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Card,
   CardContent,
   CardMedia,
@@ -9,7 +10,7 @@ import {
 import type { Room } from "../interface/room.interface";
 import { useEffect, useState } from "react";
 import { getRoomDetail as fetchRoom } from "../services/rooms.service";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const DEFAULT_IMAGE = "/no-image.png";
 
@@ -19,6 +20,8 @@ function RoomDetail() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [currentImageUrl, setCurrentImageUrl] = useState<string>("");
+
+  const reservationLink = `/reservation/${id}`;
 
   useEffect(() => {
     if (!id) {
@@ -101,6 +104,14 @@ function RoomDetail() {
           <Typography variant="body1" mt={2}>
             {disponibilidad}
           </Typography>
+          <Button
+            size="small"
+            color="primary"
+            component={Link}
+            to={reservationLink}
+          >
+            Reservar
+          </Button>
         </CardContent>
       </Card>
     </>

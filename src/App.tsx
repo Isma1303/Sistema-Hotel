@@ -6,17 +6,20 @@ import RoomDetailPage from "./client/rooms/pages/RoomDetail";
 import ReservationPage from "./client/reservations/pages/ReservationPage";
 import ReservationSumary from "./client/reservations/pages/ReservationSumary";
 import HomePage from "./pages/HomePage";
+import ProtectedRoute from "./client/auth/hooks/ProtectedRoutes";
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/room/detail/:id" element={<RoomDetailPage />} />
-        <Route path="/reservation" element={<ReservationPage />} />
-        <Route path="/reservation/sumary" element={<ReservationSumary />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/room/detail/:id" element={<RoomDetailPage />} />
+        <Route element={<ProtectedRoute />}>
+          <Route path="/reservation/:id" element={<ReservationPage />} />
+          <Route path="/reservation/sumary" element={<ReservationSumary />} />
+          <Route path="/profile" element={<ProfilePage />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
