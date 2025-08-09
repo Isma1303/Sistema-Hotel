@@ -7,6 +7,8 @@ import ReservationPage from "./client/reservations/pages/ReservationPage";
 import ReservationSumary from "./client/reservations/pages/ReservationSumary";
 import HomePage from "./pages/HomePage";
 import ProtectedRoute from "./client/auth/hooks/ProtectedRoutes";
+import LoginAuthPage from "./admin/auth/components/LoginAuthForm";
+import Dashboard from "./admin/dashboard/pages/Dashboard";
 function App() {
   return (
     <BrowserRouter>
@@ -15,11 +17,13 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/room/detail/:id" element={<RoomDetailPage />} />
-        <Route element={<ProtectedRoute />}>
-          <Route path="/reservation/:id" element={<ReservationPage />} />
-          <Route path="/reservation/sumary" element={<ReservationSumary />} />
-          <Route path="/profile" element={<ProfilePage />} />
-        </Route>
+        {/* <Route element={<ProtectedRoute />}> */}
+        <Route path="/reservation/:id" element={<ReservationPage />} />
+        <Route path="/reservation/sumary" element={<ReservationSumary />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        {/* </Route> */}
+        <Route path="/user/login" element={<LoginAuthPage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   );

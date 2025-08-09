@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { useAuthStore } from "../hooks/useAuthStore";
+import { useAuthStore } from "../hooks/authStore";
 
 interface Props {
   onLoginSuccess: () => void;
 }
 
-const LoginForm: React.FC<Props> = ({ onLoginSuccess }) => {
+const LoginAuthForm: React.FC<Props> = ({ onLoginSuccess }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const login = useAuthStore((state) => state.login);
@@ -47,4 +47,4 @@ const LoginForm: React.FC<Props> = ({ onLoginSuccess }) => {
   );
 };
 
-export default LoginForm;
+export default LoginAuthForm;

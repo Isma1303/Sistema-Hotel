@@ -1,10 +1,10 @@
 import { create } from "zustand";
-import { loginRequest, registerRequest } from "../services/auth.service";
-import type { AuthContextType, Customer } from "../interface/auth.interface";
+import type { AuthContextType, User } from "../interface/auth.interface";
+import { loginRequest, registerRequest } from "../services/admin.auth.service";
 
 export const useAuthStore = create<AuthContextType>()((set) => ({
   token: localStorage.getItem("auth_token"),
-  user: null as Customer | null,
+  user: null as User | null,
   loading: false,
   error: null as string | null,
 
@@ -25,7 +25,7 @@ export const useAuthStore = create<AuthContextType>()((set) => ({
     }
   },
 
-  singUp: async (user: Customer): Promise<void> => {
+  singUp: async (user: User): Promise<void> => {
     set({ loading: true, error: null });
     try {
       const response = await registerRequest(user);

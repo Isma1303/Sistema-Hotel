@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { profileRequest } from "../services/auth";
+import { profileRequest } from "../services/auth.service";
 import { useAuthStore } from "../hooks/useAuthStore";
 import type { Customer } from "../interface/auth.interface";
 
